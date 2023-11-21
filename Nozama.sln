@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nozama", "Nozama\Nozama.csproj", "{9614CAC3-695A-4422-95EF-BD5E2C15C43B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9614CAC3-695A-4422-95EF-BD5E2C15C43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9614CAC3-695A-4422-95EF-BD5E2C15C43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9614CAC3-695A-4422-95EF-BD5E2C15C43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9614CAC3-695A-4422-95EF-BD5E2C15C43B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52045F59-2704-49A3-A1AE-24BF0D26C57B}
+	EndGlobalSection
+EndGlobal

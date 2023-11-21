@@ -1,0 +1,97 @@
+- Passiente salvo com sucesso
+- 
+
+
+
+
+
+{Bugs concertados}
+- Limpar item do cadastro cliente
+
+ public static List<Paciente> BuscarPaciente(string Cpf)
+ {
+     List<Paciente> pacientes = new List<Paciente>();
+
+     try
+     {
+         MySqlConnectionManager connectionManager = new MySqlConnectionManager();
+         MySqlConnection connection = connectionManager.GetConnect();
+         connection.Open();
+         MySqlCommand cmd = new MySqlCommand();
+         cmd.Connection = connection;
+         cmd.CommandText = "SELECT * FROM paciente WHERE cpf = @cpf";
+         cmd.Parameters.AddWithValue("@cpf", Cpf);
+         using (MySqlDataReader reder = cmd.ExecuteReader())
+         {
+             while (reder.Read())
+             {
+                 Paciente objeto = new Paciente();
+                 objeto.Nome = reder.GetString("nome");
+                 objeto.Endereco = reder.GetString("endereco");
+                 objeto.Email = reder.GetString("email");
+                 objeto.Obs = reder.GetString("obs");
+                 objeto.Deficiencia = reder.GetString("deficiencia");
+                 objeto.Sexo = reder.GetString("sexo");
+                 objeto.Celular = reder.GetString("celular");
+                 objeto.Datanascimento = reder.GetDateTime("datanacimento");
+                 objeto.Whatsapp = reder.GetString("whatsapp");
+                 pacientes.Add(objeto);
+             }
+         }
+         if (pacientes.Count == 0)
+         {
+             MessageBox.Show("O erro esta na classe paciente");
+         }
+     }
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+Carro objeto = new Carro();
+objeto.Idcarro = reder.GetInt32("idcarro");
+objeto.Marca = reder.GetString("marca");
+objeto.Cor = reder.GetString("cor");
+objeto.Ano = reder.GetInt32("ano");
+placa.Add(objeto);
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+public static List<Carro> BuscarPlaca(object Placa)
+{
+    List<Carro> placa = new List<Carro>();
+    try
+    {
+        MySqlConnectionManager connectionManager = new MySqlConnectionManager();
+        MySqlConnection connection = connectionManager.GetConnection();
+        connection.Open();
+        MySqlCommand cmd = new MySqlCommand();
+        cmd.Connection = connection;
+        cmd.CommandText = "SELECT * FROM carro WHERE placa = @placa";
+        cmd.Parameters.AddWithValue("@placa", Placa);
+        using (MySqlDataReader reder = cmd.ExecuteReader())
+        {
+            while (reder.Read())
+            {
+                Carro objeto = new Carro();
+                objeto.Idcarro = reder.GetInt32("idcarro");
+                objeto.Marca = reder.GetString("marca");
+                objeto.Cor = reder.GetString("cor");
+                objeto.Ano = reder.GetInt32("ano");
+                placa.Add(objeto);
+            }
+
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("" + ex.Message);
+    }
+    return placa;
+}
