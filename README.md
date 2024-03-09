@@ -1,0 +1,1 @@
+Nesse projeto, nós criamos um sistema de cadastro para um laboratório de exames de sangue no qual cadastramos os clientes e os exames de sangue. Para isso, é utilizado o Visual Studio e as linguagens de programação C# e SQL com o MySQL.
